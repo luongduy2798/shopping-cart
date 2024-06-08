@@ -1,0 +1,40 @@
+name: shoppingcart
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.1 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  intl: any
+  cupertino_icons: ^1.0.6
+  flutter_bloc: ^8.1.5
+  loading_animation_widget: ^1.2.1
+  uuid: ^4.4.0
+  pull_to_refresh: ^2.0.0
+  sqflite: ^2.3.3+1
+  cached_network_image: ^3.3.1
+  flutter_cache_manager: ^3.3.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  build_runner: ^2.4.8
+  flutter_gen_runner: ^5.4.0
+
+flutter_gen:
+  output: lib/utils/gen/
+  colors:
+    inputs:
+      - assets/colors.xml
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/icons/
+    - assets/images/
