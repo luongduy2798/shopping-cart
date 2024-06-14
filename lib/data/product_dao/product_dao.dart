@@ -1,7 +1,9 @@
+import 'package:injectable/injectable.dart';
 import 'package:shoppingcart/data/database_helper.dart';
 import 'package:shoppingcart/data/product_dao/i_product_dao.dart';
 import 'package:shoppingcart/models/product_model.dart';
 
+@LazySingleton(as: IProductDao)
 class ProductDao extends IProductDao {
   @override
   Future<List<ProductModel>> getProducts(

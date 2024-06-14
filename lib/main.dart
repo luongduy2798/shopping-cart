@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shoppingcart/blocs/order_bloc/order_bloc.dart';
 import 'package:shoppingcart/data/database_helper.dart';
+import 'package:shoppingcart/injection/di.dart';
 import 'package:shoppingcart/pages/splash/splash_screen.dart';
 import 'package:shoppingcart/utils/styles/styles.dart';
 
@@ -11,6 +12,7 @@ void main() async {
   SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle.dark.copyWith(statusBarColor: Colors.transparent));
   await DatabaseHelper.instant.initDatabase();
+  configureDependencies();
   runApp(const MyApp());
 }
 
@@ -25,7 +27,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<OrderBloc>(
-      create: (context) => OrderBloc(),
+      create: (context) => getIt<OrderBloc>(),
       child: GestureDetector(
         onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
         child: MaterialApp(

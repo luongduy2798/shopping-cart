@@ -1,8 +1,10 @@
+import 'package:injectable/injectable.dart';
 import 'package:shoppingcart/data/database_helper.dart';
 import 'package:shoppingcart/data/order_dao/i_order_dao.dart';
 import 'package:shoppingcart/models/models.dart';
 import 'package:shoppingcart/models/order_model.dart';
 
+@LazySingleton(as: IOrderDao)
 class OrderDao extends IOrderDao {
   @override
   Future<void> insertOrUpdateOrder(OrderModel order) async {

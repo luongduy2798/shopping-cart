@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shoppingcart/blocs/order_bloc/order_bloc.dart';
+import 'package:shoppingcart/injection/di.dart';
 import 'package:shoppingcart/models/order_model.dart';
 import 'package:shoppingcart/pages/cart/cart_screen.dart';
 import 'package:shoppingcart/utils/extensions/extensions.dart';
@@ -20,7 +21,7 @@ class _CardHeaderState extends State<CardHeader> {
 
   @override
   void initState() {
-    orderBloc = BlocProvider.of<OrderBloc>(context);
+    orderBloc = getIt<OrderBloc>();
     orderBloc.add(GetListOrderEvent());
     super.initState();
   }

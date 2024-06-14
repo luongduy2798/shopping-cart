@@ -1,11 +1,13 @@
 import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:injectable/injectable.dart';
 import 'package:shoppingcart/data/product_dao/i_product_dao.dart';
 import 'package:shoppingcart/data/product_dao/product_dao.dart';
 import 'package:shoppingcart/models/models.dart';
 part 'home_event.dart';
 part 'home_state.dart';
 
+@LazySingleton()
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   HomeBloc() : super(HomeState()) {
     on<GetListProductEvent>(_mapGetListChangedToState);

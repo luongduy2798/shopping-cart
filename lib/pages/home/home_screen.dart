@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:shoppingcart/data/database_helper.dart';
+import 'package:shoppingcart/injection/di.dart';
 import 'package:shoppingcart/pages/home/blocs/home_bloc.dart';
 import 'package:shoppingcart/utils/extensions/extension_context.dart';
 import 'package:shoppingcart/widgets/base/base.dart';
@@ -33,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   initData() {
-    homeBloc = HomeBloc();
+    homeBloc = getIt<HomeBloc>();
     homeBloc.add(GetListProductEvent());
   }
 

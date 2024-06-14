@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shoppingcart/injection/di.dart';
 import 'package:shoppingcart/pages/home/blocs/home_bloc.dart';
 import 'package:shoppingcart/utils/extensions/extensions.dart';
 import 'package:shoppingcart/utils/gen/gen.dart';
@@ -17,7 +18,7 @@ class _AllProductGridState extends State<AllProductGrid> {
 
   @override
   void initState() {
-    homeBloc = BlocProvider.of<HomeBloc>(context);
+    homeBloc = getIt<HomeBloc>();
     super.initState();
   }
 

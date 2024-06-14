@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shoppingcart/blocs/order_bloc/order_bloc.dart';
+import 'package:shoppingcart/injection/di.dart';
 import 'package:shoppingcart/models/order_model.dart';
 import 'package:shoppingcart/models/product_model.dart';
 import 'package:shoppingcart/utils/extensions/extensions.dart';
@@ -26,8 +27,7 @@ class _ProductItemState extends State<ProductItem> {
   late OrderModel _order;
   @override
   void initState() {
-    orderBloc = BlocProvider.of<OrderBloc>(context);
-
+    orderBloc = getIt<OrderBloc>();
     super.initState();
   }
 
